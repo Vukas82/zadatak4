@@ -1,2 +1,2 @@
-# zadatak4
+# Memory game in react
 new game
