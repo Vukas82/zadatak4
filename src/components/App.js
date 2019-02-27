@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Cards from './Cards';
-
 import '../App.css';
+
+import { Provider } from 'react-redux';
+
+import store from './store'
 
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-
-		this.store = {};
-	}
-
 	render() {
 		return (
-
-			<div>
-				<div className="App-header">
-					<header>
-						<Header />
-					</header>
+			<Provider store={store}>
+				<div>
+					<div className="App-header">
+						<header>
+							<Header />
+						</header>
+					</div>
+					<Cards />
 				</div>
-				<Cards />
-			</div>
-
+			</Provider>
 		);
 	}
 }

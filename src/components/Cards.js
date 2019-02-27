@@ -15,6 +15,10 @@ class Cards extends Component {
 			finalizedFrameworks: [],
 			openedFrameworks: [],
 		};
+		// this.start();
+	}
+
+	componentWillMount() {
 		this.start();
 	}
 
@@ -59,19 +63,19 @@ class Cards extends Component {
 		});
 	}
 
-	start() {
-		const finalizedFrameworks = [];
-		this.state.duplicatedFrameworks = this.state.frameworks.concat(this.state.frameworks);
-		this.state.randomizedFrameworks = this.shuffle(this.state.duplicatedFrameworks);
-		this.state.randomizedFrameworks.map((name, index) => finalizedFrameworks.push({
-			name,
-			close: true,
-			complete: false,
-			fail: false,
-			key: { index },
-		}));
-		this.state.finalizedFrameworks = finalizedFrameworks;
-	}
+	// start() {
+		// const finalizedFrameworks = [];
+		// this.state.duplicatedFrameworks = this.state.frameworks.concat(this.state.frameworks);
+		// this.state.randomizedFrameworks = this.shuffle(this.state.duplicatedFrameworks);
+		// this.state.randomizedFrameworks.map((name, index) => finalizedFrameworks.push({
+		// 	name,
+		// 	close: true,
+		// 	complete: false,
+		// 	fail: false,
+		// 	key: { index },
+		// }));
+		// this.state.finalizedFrameworks = finalizedFrameworks;
+	// }
 
 	shuffle(array) {
 		let currentIndex = array.length; let temporaryValue; let
@@ -85,6 +89,7 @@ class Cards extends Component {
 		}
 		return array;
 	}
+
 
 	render() {
 		return (
