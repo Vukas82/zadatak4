@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+
 import Header from './Header';
 import Cards from './Cards';
 import '../App.css';
 
-import { Provider } from 'react-redux';
 
-import store from './store'
+import store from './store';
 
 
 class App extends Component {

@@ -8,19 +8,19 @@ class Card extends Component {
 	}
 
 
-	clicked(framework) {
+	clicked(card) {
 		const { click } = this.props;
-		click(framework);
+		click(card);
 	}
 
 	render() {
-		const { framework, close, complete } = this.props;
+		const { card, close, complete } = this.props;
 
 		return (
-			<div className={`card${!close ? ' opened' : ''}${complete ? ' matched' : ''}`} onClick={() => this.clicked(framework)} onKeyPress={this.handleKeyPress} role="button" tabIndex={0}>
+			<div className={`card${!close ? ' opened' : ''}${complete ? ' matched' : ''}`} onClick={() => this.clicked(card)} onKeyPress={this.handleKeyPress} role="button" tabIndex={0}>
 				<div className="front">??</div>
 				<div className="back">
-					<img src={`./img/${framework}.png`} alt="Game Element" />
+					<img src={`./img/${card}.png`} alt="Game Element" />
 				</div>
 			</div>
 		);
@@ -28,7 +28,7 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-	framework: PropTypes.string.isRequired,
+	card: PropTypes.string.isRequired,
 	close: PropTypes.bool.isRequired,
 	complete: PropTypes.bool.isRequired,
 	click: PropTypes.func.isRequired,
